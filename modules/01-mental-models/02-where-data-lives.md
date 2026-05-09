@@ -22,23 +22,23 @@ Every product you'll ever build moves data between three places: a person's scre
 
 Imagine a small office.
 
-In the back, there's a metal **filing cabinet** (a one-line definition: a database, [→ GLOSSARY](GLOSSARY.md#database)). It has labeled drawers. One drawer is `users`, another is `posts`, another is `comments`. Inside each drawer are **index cards** (a one-line definition: a row, [→ GLOSSARY](GLOSSARY.md#row)). Every card in the `users` drawer has the same fixed set of fields: `id`, `email`, `display_name`, `created_at`. Cards in the `posts` drawer have different fields: `id`, `author_id`, `body`, `created_at`.
+In the back, there's a metal **filing cabinet** (a one-line definition: a database, [→ GLOSSARY](../../GLOSSARY.md#database)). It has labeled drawers. One drawer is `users`, another is `posts`, another is `comments`. Inside each drawer are **index cards** (a one-line definition: a row, [→ GLOSSARY](../../GLOSSARY.md#row)). Every card in the `users` drawer has the same fixed set of fields: `id`, `email`, `display_name`, `created_at`. Cards in the `posts` drawer have different fields: `id`, `author_id`, `body`, `created_at`.
 
 The cabinet doesn't know who needs the cards. It just stores them. Anyone with a key can pull a drawer open, take a card out, write on it, file it back. Without rules about who can open which drawer, the cabinet is useless for an app where different people are supposed to see different things.
 
 Now picture the rest of the office.
 
-There are clerks at desks (**servers**, one-line definition: programs that run continuously waiting for requests, [→ GLOSSARY](GLOSSARY.md#server)). When someone outside the office wants information — say, a customer who walks up to the front desk and asks "what posts has Alice written?" — the receptionist takes the question, walks back to the clerk, and the clerk goes to the filing cabinet, opens the `posts` drawer, finds every card where `author_id` equals Alice's id, copies the relevant fields onto a piece of paper, and hands it back to the receptionist, who hands it to the customer.
+There are clerks at desks (**servers**, one-line definition: programs that run continuously waiting for requests, [→ GLOSSARY](../../GLOSSARY.md#server)). When someone outside the office wants information — say, a customer who walks up to the front desk and asks "what posts has Alice written?" — the receptionist takes the question, walks back to the clerk, and the clerk goes to the filing cabinet, opens the `posts` drawer, finds every card where `author_id` equals Alice's id, copies the relevant fields onto a piece of paper, and hands it back to the receptionist, who hands it to the customer.
 
 The customer never touches the cabinet. The customer never even sees it. They just hand over a piece of paper with a question on it and get back a piece of paper with the answer.
 
-The "piece of paper with a question" is a **request** (one-line definition: a structured message asking a server for something, [→ GLOSSARY](GLOSSARY.md#request)).
+The "piece of paper with a question" is a **request** (one-line definition: a structured message asking a server for something, [→ GLOSSARY](../../GLOSSARY.md#request)).
 
-The "piece of paper with the answer" is a **response** (one-line definition: a structured message replying to a request, [→ GLOSSARY](GLOSSARY.md#response)).
+The "piece of paper with the answer" is a **response** (one-line definition: a structured message replying to a request, [→ GLOSSARY](../../GLOSSARY.md#response)).
 
-Together, the question-and-answer pattern is **HTTP** (one-line definition: the protocol the web uses to send requests and responses, [→ GLOSSARY](GLOSSARY.md#http)).
+Together, the question-and-answer pattern is **HTTP** (one-line definition: the protocol the web uses to send requests and responses, [→ GLOSSARY](../../GLOSSARY.md#http)).
 
-The way one program inside the office talks to another program — the receptionist talking to the clerk, or the clerk talking to a different clerk in another office — is also done by passing pieces of paper around. When two programs agree on what kinds of paper they'll accept and what they'll write back, that agreement is called an **API** (one-line definition: the contract between two programs about which questions can be asked and how the answers will look, [→ GLOSSARY](GLOSSARY.md#api)).
+The way one program inside the office talks to another program — the receptionist talking to the clerk, or the clerk talking to a different clerk in another office — is also done by passing pieces of paper around. When two programs agree on what kinds of paper they'll accept and what they'll write back, that agreement is called an **API** (one-line definition: the contract between two programs about which questions can be asked and how the answers will look, [→ GLOSSARY](../../GLOSSARY.md#api)).
 
 So the office has three layers:
 
@@ -58,7 +58,7 @@ flowchart TB
   end
 ```
 
-Notice the dotted line from `posts` back to `users`. That's a **foreign key** (one-line definition: a field in one row that points at the id of a row in another drawer, [→ GLOSSARY](GLOSSARY.md#foreign-key)). The `posts` drawer doesn't store the author's display name — it stores the author's `id`, and to find the display name, you walk over to the `users` drawer and look up the row with that id. This is what relational databases mean by "relational": rows in one drawer reference rows in another, and the database knows how to join them.
+Notice the dotted line from `posts` back to `users`. That's a **foreign key** (one-line definition: a field in one row that points at the id of a row in another drawer, [→ GLOSSARY](../../GLOSSARY.md#foreign-key)). The `posts` drawer doesn't store the author's display name — it stores the author's `id`, and to find the display name, you walk over to the `users` drawer and look up the row with that id. This is what relational databases mean by "relational": rows in one drawer reference rows in another, and the database knows how to join them.
 
 And here's the question-and-answer pattern up close, from your browser's perspective:
 
@@ -83,11 +83,11 @@ Two things tend to confuse beginners here, and both are worth noticing now:
 
 You'll meet two more terms in Module 3 and beyond.
 
-A **schema** (one-line definition: the fixed shape of fields in a table, [→ GLOSSARY](GLOSSARY.md#schema)) is the printed template at the top of every card in a drawer.
+A **schema** (one-line definition: the fixed shape of fields in a table, [→ GLOSSARY](../../GLOSSARY.md#schema)) is the printed template at the top of every card in a drawer.
 
-A **query** (one-line definition: a written question asking the database for specific cards, [→ GLOSSARY](GLOSSARY.md#query)) is what the clerk writes when talking to the cabinet.
+A **query** (one-line definition: a written question asking the database for specific cards, [→ GLOSSARY](../../GLOSSARY.md#query)) is what the clerk writes when talking to the cabinet.
 
-The language the clerk uses for those queries is usually **SQL** (one-line definition: the standard query language for relational databases, [→ GLOSSARY](GLOSSARY.md#sql)). You don't need to write SQL yet; you'll see your AI agent write it, and Module 3.5 will teach you to read enough of it to know when it's wrong.
+The language the clerk uses for those queries is usually **SQL** (one-line definition: the standard query language for relational databases, [→ GLOSSARY](../../GLOSSARY.md#sql)). You don't need to write SQL yet; you'll see your AI agent write it, and Module 3.5 will teach you to read enough of it to know when it's wrong.
 
 > **Note:** None of this lesson teaches you how to build any of these things. Module 1 is about the *shape* of a software product. Building starts in Module 2 (toolchain) and Module 3 (the AI-coding loop), and the first time you'll write code that opens a real database is Phase 3, Chunk 1.
 

@@ -23,7 +23,10 @@ deviations: []                        # per D-02: list any anatomy elements the 
 <!-- LESSON-03 — 600–1500 words typical. Adapt to topic; if the read is shorter or longer, declare via front-matter `deviations: [short-core-read]` or `[long-core-read]` AND add a `> **Deviation note:**` blockquote inline at the top of this section. -->
 
 <!-- LESSON-04 — Define vocabulary inline on first use using this pattern:
-     **term** (one-line definition, [→ GLOSSARY](GLOSSARY.md#term))
+     **term** (one-line definition, [→ GLOSSARY](../../GLOSSARY.md#term))
+     The `../../` prefix is correct for lessons at modules/NN-slug/lesson.md (two
+     directories deep from repo root, where GLOSSARY.md lives). Adjust if your
+     lesson is at a different depth.
      Redefine after long gaps. -->
 
 <!-- LESSON-11 — Use Mermaid for spatial or relational concepts. Standard fenced block:
@@ -69,6 +72,6 @@ deviations: []                        # per D-02: list any anatomy elements the 
 
 - **D-01:** This template is the skeleton; the exemplar is `modules/01-mental-models/02-where-data-lives.md`. Refer to it for tone and depth.
 - **D-02 deviations rule:** If you skip or shorten any anatomy element, add it to the front-matter `deviations: []` array AND drop a `> **Deviation note:**` blockquote near the affected section explaining why.
-- **D-04 vocab callout pattern:** `**term** (one-line definition, [→ GLOSSARY](GLOSSARY.md#term))` — auditable by grep. The GLOSSARY anchor is the contract that ensures GLOSSARY.md mirrors lesson vocabulary.
+- **D-04 vocab callout pattern:** `**term** (one-line definition, [→ GLOSSARY](../../GLOSSARY.md#term))` — auditable by grep. The `../../` prefix assumes the lesson lives at `modules/NN-slug/lesson.md` (two directories deep from repo root); adjust the relative path if your lesson is at a different depth. The GLOSSARY anchor is the contract that ensures GLOSSARY.md mirrors lesson vocabulary.
 - **D-05 Loop check intent framing for M1:** Module 1 is pre-loop. Every M1 Loop check names `intent`.
 - **D-18 SSG-portability rules:** standard ` ```mermaid ` fences; universal `> **Note:**` / `> **Warning:**` blockquotes (NOT the GitHub-flavored bracketed-bang admonition syntax — that breaks under non-GitHub renderers like Next.js/Docusaurus); relative internal links; YAML front-matter; repo-relative image paths.

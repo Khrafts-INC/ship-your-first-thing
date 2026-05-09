@@ -26,15 +26,15 @@ You're a customer. You walk in, sit down, and a waiter comes over (a person who 
 
 That whole choreography — customer / waiter / kitchen — is the same shape as the web.
 
-The customer in the analogy is your **browser** (one-line definition: a program on your computer that knows how to ask servers for webpages and render them, [→ GLOSSARY](GLOSSARY.md#browser)).
+The customer in the analogy is your **browser** (one-line definition: a program on your computer that knows how to ask servers for webpages and render them, [→ GLOSSARY](../../GLOSSARY.md#browser)).
 
 When you type `example.com` into the address bar and press Enter, the browser starts the round trip.
 
-The kitchen is the **server** (one-line definition: a program running continuously on a remote computer, waiting for requests, [→ GLOSSARY](GLOSSARY.md#server)).
+The kitchen is the **server** (one-line definition: a program running continuously on a remote computer, waiting for requests, [→ GLOSSARY](../../GLOSSARY.md#server)).
 
 It doesn't know you. It just knows how to handle whatever ticket comes in.
 
-The waiter is the protocol that carries messages between them: **HTTP** (one-line definition: the protocol the web uses to send requests and responses, [→ GLOSSARY](GLOSSARY.md#http)).
+The waiter is the protocol that carries messages between them: **HTTP** (one-line definition: the protocol the web uses to send requests and responses, [→ GLOSSARY](../../GLOSSARY.md#http)).
 
 The waiter doesn't cook the food and doesn't eat the food — the waiter only carries paper between the dining room and the kitchen.
 
@@ -53,19 +53,19 @@ flowchart LR
 
 The order ticket has a specific shape. It says: "what kind of ticket is this?" and "what dish are you asking for?"
 
-In HTTP language, "what kind" is the **HTTP method** (one-line definition: the verb on the request — `GET`, `POST`, `PUT`, `DELETE` — that says what you want to do, [→ GLOSSARY](GLOSSARY.md#http-method)).
+In HTTP language, "what kind" is the **HTTP method** (one-line definition: the verb on the request — `GET`, `POST`, `PUT`, `DELETE` — that says what you want to do, [→ GLOSSARY](../../GLOSSARY.md#http-method)).
 
-And "what dish" is the **URL** (one-line definition: the address that names what you're asking for, [→ GLOSSARY](GLOSSARY.md#url)).
+And "what dish" is the **URL** (one-line definition: the address that names what you're asking for, [→ GLOSSARY](../../GLOSSARY.md#url)).
 
 A `GET` ticket says "show me the menu" — give me what's at this address. A `POST` ticket says "place an order" — here's some new information; do something with it. A `PUT` says "change my order." A `DELETE` says "cancel it." The kitchen reads the ticket type and behaves accordingly.
 
 When the kitchen finishes, it hands the waiter a dish along with a slip of paper. The slip says how it went: `200 OK` if everything's fine, `404 Not Found` if the dish wasn't on the menu, `500 Internal Server Error` if the kitchen caught fire.
 
-These are **HTTP status codes** (one-line definition: a three-digit number summarizing how a request went, [→ GLOSSARY](GLOSSARY.md#http-status-code)).
+These are **HTTP status codes** (one-line definition: a three-digit number summarizing how a request went, [→ GLOSSARY](../../GLOSSARY.md#http-status-code)).
 
 When you load a page and see "404," you're seeing the slip from the kitchen saying "you ordered something we don't make."
 
-What's actually on the dish? When you load `example.com`, the kitchen hands the waiter a slab of **HTML** (one-line definition: the markup language that describes the structure of a webpage, [→ GLOSSARY](GLOSSARY.md#html)).
+What's actually on the dish? When you load `example.com`, the kitchen hands the waiter a slab of **HTML** (one-line definition: the markup language that describes the structure of a webpage, [→ GLOSSARY](../../GLOSSARY.md#html)).
 
 HTML is just text — a tree of elements like `<h1>`, `<p>`, `<img>`. Your browser reads the HTML and starts drawing the page. As it reads, it sees references to other resources — `<link rel="stylesheet" href="style.css">` says "I need this CSS file too." So the browser sends *another* request for `style.css`. And another for any images. And another for any JavaScript files. Loading one page often means a dozen round trips.
 
@@ -91,7 +91,7 @@ A few things tend to confuse beginners and are worth noticing now.
 
 **The waiter speaks one language: HTTP.** Browsers do not talk database; they do not talk filesystem; they do not run server code. Every interaction between the browser and "the back end" is shaped like an HTTP request and an HTTP response. The next lesson — bundle 2 — looks at what's *inside* the kitchen, where the cooks open the filing cabinet (database) and look up cards. But the waiter never goes back there. The waiter only ever speaks HTTP.
 
-You'll meet the term **DNS** (one-line definition: the system that translates a human-readable URL into the IP address of the actual server, [→ GLOSSARY](GLOSSARY.md#dns)) in passing.
+You'll meet the term **DNS** (one-line definition: the system that translates a human-readable URL into the IP address of the actual server, [→ GLOSSARY](../../GLOSSARY.md#dns)) in passing.
 
 When you type `example.com`, your browser doesn't know which computer to ask. DNS is the phone book it consults: "who is example.com? Tell me their IP address." Then it sends the request to that address. For everyday purposes, DNS is invisible; for "this domain isn't loading," DNS is one of the first places to look.
 

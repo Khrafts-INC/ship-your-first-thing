@@ -24,7 +24,9 @@ deviations: []
 
 <!-- LESSON-03 — Adapt length to topic. M0 reads can be shorter than M1 (200–800 words is fine for Module 0; 600–1500 is the M1+ norm). -->
 
-<!-- LESSON-04 vocab callout pattern: **term** (one-line definition, [→ GLOSSARY](GLOSSARY.md#term)) -->
+<!-- LESSON-04 vocab callout pattern: **term** (one-line definition, [→ GLOSSARY](../../GLOSSARY.md#term))
+     The `../../` prefix is correct for M0 lessons at modules/00-welcome/lesson.md
+     (two directories deep from repo root, where GLOSSARY.md lives). -->
 
 ## Exercise
 

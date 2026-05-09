@@ -26,19 +26,19 @@ There's a door. There's a person at the door — call them the door staff. There
 
 When you walk up, the door staff first asks: "are you who you say you are?" You hand over your ID. They look at it; they decide whether the ID is real and whether the photo matches.
 
-That's **authentication** (one-line definition: confirming you are who you claim to be, [→ GLOSSARY](GLOSSARY.md#authentication)) — sometimes shortened to "authn." It's a question about *identity*.
+That's **authentication** (one-line definition: confirming you are who you claim to be, [→ GLOSSARY](../../GLOSSARY.md#authentication)) — sometimes shortened to "authn." It's a question about *identity*.
 
 The door staff then asks: "are you on the list?" They look at the VIP list (which is a different list from the door's general entry list). The list says who can go into the VIP room.
 
-That's **authorization** (one-line definition: deciding what you're allowed to do once you're identified, [→ GLOSSARY](GLOSSARY.md#authorization)) — sometimes shortened to "authz." It's a question about *permissions*.
+That's **authorization** (one-line definition: deciding what you're allowed to do once you're identified, [→ GLOSSARY](../../GLOSSARY.md#authorization)) — sometimes shortened to "authz." It's a question about *permissions*.
 
 These are two different questions. The door staff might let you in the door (authn passes — your ID is real) but turn you away at the velvet rope (authz fails — you're not on the VIP list). Confusing the two is the most common security bug in real software: "I logged in" is not the same as "I'm allowed to do this thing I'm trying to do."
 
 Then the door staff stamps your hand. The stamp lets you go to the bathroom and come back without re-checking your ID every time.
 
-That's a **session** (one-line definition: a remembered "yes, you're you" so the app doesn't re-check on every request, [→ GLOSSARY](GLOSSARY.md#session)).
+That's a **session** (one-line definition: a remembered "yes, you're you" so the app doesn't re-check on every request, [→ GLOSSARY](../../GLOSSARY.md#session)).
 
-The thing physically representing the session is usually a **session token** (one-line definition: a string the browser sends with each request to prove "I'm the same person who just authenticated," [→ GLOSSARY](GLOSSARY.md#session-token)) — often delivered as a **cookie** (one-line definition: a small piece of data the browser stores and re-sends to the same site, [→ GLOSSARY](GLOSSARY.md#cookie)) the server set during sign-in.
+The thing physically representing the session is usually a **session token** (one-line definition: a string the browser sends with each request to prove "I'm the same person who just authenticated," [→ GLOSSARY](../../GLOSSARY.md#session-token)) — often delivered as a **cookie** (one-line definition: a small piece of data the browser stores and re-sends to the same site, [→ GLOSSARY](../../GLOSSARY.md#cookie)) the server set during sign-in.
 
 ```mermaid
 sequenceDiagram
@@ -61,9 +61,9 @@ Now: how does the club open in the first place?
 
 Until now, your "club" is a private kitchen. The cook is testing recipes; the waiter is practicing carrying plates. Nobody from the public is inside. In web terms: the app is running on a developer's laptop, at `localhost`.
 
-**Localhost** (one-line definition: a URL that means "this same computer," not the public internet, [→ GLOSSARY](GLOSSARY.md#localhost)) is the private kitchen.
+**Localhost** (one-line definition: a URL that means "this same computer," not the public internet, [→ GLOSSARY](../../GLOSSARY.md#localhost)) is the private kitchen.
 
-Opening night is **deployment** (one-line definition: the act of moving an app from the developer's laptop to a public server so anyone on the internet can reach it, [→ GLOSSARY](GLOSSARY.md#deployment)).
+Opening night is **deployment** (one-line definition: the act of moving an app from the developer's laptop to a public server so anyone on the internet can reach it, [→ GLOSSARY](../../GLOSSARY.md#deployment)).
 
 The plumbing of opening night looks like this:
 
@@ -75,11 +75,11 @@ flowchart LR
   Vercel -->|public URL| Customers[Anyone on the internet]
 ```
 
-The recipes get committed to **git** (one-line definition: a tool that tracks every version of every file in a project, [→ GLOSSARY](GLOSSARY.md#git)) and pushed to **GitHub** (one-line definition: a website that hosts git repositories, [→ GLOSSARY](GLOSSARY.md#github)) — that's the recipe binder, kept somewhere safe.
+The recipes get committed to **git** (one-line definition: a tool that tracks every version of every file in a project, [→ GLOSSARY](../../GLOSSARY.md#git)) and pushed to **GitHub** (one-line definition: a website that hosts git repositories, [→ GLOSSARY](../../GLOSSARY.md#github)) — that's the recipe binder, kept somewhere safe.
 
-Then **Vercel** (one-line definition: a service that runs your code on the public internet, [→ GLOSSARY](GLOSSARY.md#vercel)) watches the recipe binder. When new recipes land, Vercel's prep cooks (build servers) read the new version, get the kitchen ready, and flip the sign on the door from "Closed" to "Open."
+Then **Vercel** (one-line definition: a service that runs your code on the public internet, [→ GLOSSARY](../../GLOSSARY.md#vercel)) watches the recipe binder. When new recipes land, Vercel's prep cooks (build servers) read the new version, get the kitchen ready, and flip the sign on the door from "Closed" to "Open."
 
-That whole pipeline is **CI/CD** (one-line definition: continuous integration / continuous deployment — the automated path from "I committed code" to "it's live on the internet," [→ GLOSSARY](GLOSSARY.md#ci-cd)).
+That whole pipeline is **CI/CD** (one-line definition: continuous integration / continuous deployment — the automated path from "I committed code" to "it's live on the internet," [→ GLOSSARY](../../GLOSSARY.md#ci-cd)).
 
 For your thread project in Phase 3, every `git push` to the main branch will go through this pipeline automatically.
 
