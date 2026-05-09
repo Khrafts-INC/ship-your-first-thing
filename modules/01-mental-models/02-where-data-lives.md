@@ -52,8 +52,8 @@ Here's the filing cabinet up close:
 flowchart TB
   subgraph DB[Filing cabinet — database]
     direction LR
-    Users[Drawer: users<br/>id | email | display_name]
-    Posts[Drawer: posts<br/>id | author_id | body]
+    Users["Drawer: users<br/>id | email | display_name"]
+    Posts["Drawer: posts<br/>id | author_id | body"]
     Users -.->|author_id references users.id| Posts
   end
 ```

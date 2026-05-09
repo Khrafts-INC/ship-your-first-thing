@@ -4,9 +4,9 @@
 
 ```mermaid
 flowchart LR
-  Customer[Customer<br/>= browser]
-  Waiter[Waiter<br/>= HTTP request/response]
-  Kitchen[Kitchen<br/>= server]
+  Customer["Customer<br/>= browser"]
+  Waiter["Waiter<br/>= HTTP request/response"]
+  Kitchen["Kitchen<br/>= server"]
   Customer -->|orders| Waiter
   Waiter -->|delivers| Customer
   Waiter -->|brings ticket| Kitchen
@@ -34,8 +34,8 @@ sequenceDiagram
 
 ```mermaid
 flowchart LR
-  GET[GET<br/>show me the menu] --> Server
-  POST[POST<br/>place an order] --> Server
-  PUT[PUT<br/>change my order] --> Server
-  DELETE[DELETE<br/>cancel my order] --> Server
+  GET["GET<br/>show me the menu"] --> Server
+  POST["POST<br/>place an order"] --> Server
+  PUT["PUT<br/>change my order"] --> Server
+  DELETE["DELETE<br/>cancel my order"] --> Server
 ```

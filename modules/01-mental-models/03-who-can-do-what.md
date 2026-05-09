@@ -69,9 +69,9 @@ The plumbing of opening night looks like this:
 
 ```mermaid
 flowchart LR
-  Localhost[Localhost<br/>= private kitchen] -->|git push| GitHub[GitHub<br/>= recipe binder]
-  GitHub -->|trigger| Build[Build server<br/>= prep cooks]
-  Build -->|deploy| Vercel[Vercel<br/>= public restaurant]
+  Localhost["Localhost<br/>= private kitchen"] -->|git push| GitHub["GitHub<br/>= recipe binder"]
+  GitHub -->|trigger| Build["Build server<br/>= prep cooks"]
+  Build -->|deploy| Vercel["Vercel<br/>= public restaurant"]
   Vercel -->|public URL| Customers[Anyone on the internet]
 ```
 

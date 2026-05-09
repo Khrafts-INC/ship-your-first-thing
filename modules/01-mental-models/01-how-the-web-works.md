@@ -42,9 +42,9 @@ So the round trip looks like this:
 
 ```mermaid
 flowchart LR
-  Customer[Customer<br/>= browser]
-  Waiter[Waiter<br/>= HTTP request/response]
-  Kitchen[Kitchen<br/>= server]
+  Customer["Customer<br/>= browser"]
+  Waiter["Waiter<br/>= HTTP request/response"]
+  Kitchen["Kitchen<br/>= server"]
   Customer -->|orders| Waiter
   Waiter -->|delivers| Customer
   Waiter -->|brings ticket| Kitchen
