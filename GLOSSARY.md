@@ -28,11 +28,11 @@ Used in: [Module 0 — Account creation](./modules/00-welcome/04-account-creatio
 
 ### authentication
 Confirming you are who you claim to be. Sometimes shortened to "authn." *Example: a password check, or clicking a magic link sent to your email.*
-Used in: [Module 1 — Who can do what, how it goes live](./modules/01-mental-models/03-who-can-do-what.md).
+Used in: [Module 1 — Who can do what](./modules/01-mental-models/03-who-can-do-what.md).
 
 ### authorization
 Deciding what an identified user is allowed to do. Sometimes shortened to "authz." *Example: a logged-in user can edit their own posts but not someone else's.*
-Used in: [Module 1 — Who can do what, how it goes live](./modules/01-mental-models/03-who-can-do-what.md).
+Used in: [Module 1 — Who can do what](./modules/01-mental-models/03-who-can-do-what.md).
 
 ## B
 
@@ -56,7 +56,7 @@ Used in: [Module 0 — Hardware check](./modules/00-welcome/02-hardware-check.md
 
 ### cookie
 A small piece of data the browser stores and re-sends to the same site on every request. *Example: a session cookie tells the server "this is the same Alice who logged in 5 minutes ago."*
-Used in: [Module 1 — Who can do what, how it goes live](./modules/01-mental-models/03-who-can-do-what.md).
+Used in: [Module 1 — Who can do what](./modules/01-mental-models/03-who-can-do-what.md).
 
 ## D
 
@@ -66,7 +66,7 @@ Used in: [Module 1 — Where data lives, how programs talk](./modules/01-mental-
 
 ### deployment
 The act of moving an app from a developer's laptop (localhost) to a public server so anyone on the internet can reach it. *Example: pushing to GitHub and letting Vercel build and host the result.*
-Used in: [Module 1 — Who can do what, how it goes live](./modules/01-mental-models/03-who-can-do-what.md).
+Used in: [Module 1 — How it goes live](./modules/01-mental-models/04-how-it-goes-live.md).
 
 ### dns
 Domain Name System — the system that translates a human-readable URL into the IP address of the actual server. *Example: when you type `example.com`, DNS resolves it to `93.184.216.34` so the browser knows which server to ask.*
@@ -86,7 +86,7 @@ Used in: [Module 0 — Cost-path triage](./modules/00-welcome/03-cost-path-triag
 
 ### git
 A tool that tracks every version of every file in a project. Used to commit changes locally and push them to GitHub. *Example: `git commit -m "add login button"`.*
-Used in: [Module 1 — Who can do what, how it goes live](./modules/01-mental-models/03-who-can-do-what.md).
+Used in: [Module 1 — How it goes live](./modules/01-mental-models/04-how-it-goes-live.md).
 
 ### github
 A website that hosts code repositories and runs developer tools (like Codespaces) on top of them; Vercel and other deploy services watch GitHub for new code. *Example: this course lives in a GitHub repository at github.com.*
@@ -158,11 +158,11 @@ Used in: [Module 1 — Where data lives, how programs talk](./modules/01-mental-
 
 ### session
 A remembered "yes, you're you" so an app doesn't re-check identity on every request. Lives between authentication and the next sign-out. *Example: after you log in, the app remembers you for the next 24 hours.*
-Used in: [Module 1 — Who can do what, how it goes live](./modules/01-mental-models/03-who-can-do-what.md).
+Used in: [Module 1 — Who can do what](./modules/01-mental-models/03-who-can-do-what.md).
 
 ### session-token
 A string the browser sends with each request to prove "I'm the same person who just authenticated." Often delivered as a cookie. *Example: a JWT or an opaque session id.*
-Used in: [Module 1 — Who can do what, how it goes live](./modules/01-mental-models/03-who-can-do-what.md).
+Used in: [Module 1 — Who can do what](./modules/01-mental-models/03-who-can-do-what.md).
 
 ### sql
 Structured Query Language — the standard way to ask a relational database for rows. *Example: `SELECT * FROM posts ORDER BY created_at DESC`.*
@@ -188,4 +188,4 @@ Used in: [Module 1 — How the web works](./modules/01-mental-models/01-how-the-
 
 ### vercel
 A service that runs your code on the public internet. Watches a GitHub repository, builds the code on every push, and serves it at a public URL. *Example: the course platform deploys to Vercel at `https://shipyourfirstthing.com`.*
-Used in: [Module 1 — Who can do what, how it goes live](./modules/01-mental-models/03-who-can-do-what.md).
+Used in: [Module 1 — How it goes live](./modules/01-mental-models/04-how-it-goes-live.md).
