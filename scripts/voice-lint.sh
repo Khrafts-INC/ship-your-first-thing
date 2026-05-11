@@ -32,12 +32,26 @@ cd "$REPO_ROOT"
 
 # Default scope: an array so it expands correctly inside quoted grep calls (WR-01 fix).
 # Note: grep --exclude-dir matches by basename, not path — so we pass the directory's basename only.
+# `--exclude=GLOB` matches filenames at any depth (also basename-only) and is used for
+# self-documenting docs that quote banned patterns as illustrations (e.g., CLAUDE.md +
+# docs/COURSE-AUTHORING.md describe what tutorial-fiction phrases look like and would
+# otherwise trip the literal-phrase scans). Extend this list when adding a new authoring
+# or agent-facing doc that needs the same exemption.
 SCOPE_GLOBS=(
   --include=*.md
   --exclude-dir=.planning
   --exclude-dir=.claude
   --exclude-dir=node_modules
   --exclude-dir=voice-lint-fixtures
+  --exclude=CLAUDE.md
+  --exclude=COURSE-AUTHORING.md
+)
+
+# Mirror of the basename-exempt list for scan functions that use `find` instead of
+# `grep`'s built-in `--exclude` flag (scan_mermaid_br). Keep these two lists in sync.
+SCOPE_EXEMPT_BASENAMES=(
+  CLAUDE.md
+  COURSE-AUTHORING.md
 )
 
 # Forbidden phrase patterns (literal substrings, case-insensitive).
@@ -581,12 +595,21 @@ scan_mermaid_br() {
 
   echo "==> Scanning Mermaid blocks for <br> / <br/> outside quoted node labels..."
 
+  # Mirror grep --exclude basenames from SCOPE_EXEMPT_BASENAMES (e.g., CLAUDE.md,
+  # COURSE-AUTHORING.md) since `find` matches paths, not basenames.
+  local find_exempt_args=()
+  local exempt_name
+  for exempt_name in "${SCOPE_EXEMPT_BASENAMES[@]}"; do
+    find_exempt_args+=(-not -name "$exempt_name")
+  done
+
   local files
   files=$(find "${roots[@]}" -type f -name '*.md' \
             -not -path '*/.planning/*' \
             -not -path '*/.claude/*' \
             -not -path '*/node_modules/*' \
             $([ "$mode" != "fixtures" ] && printf -- '-not -path */voice-lint-fixtures/*') \
+            "${find_exempt_args[@]}" \
             2>/dev/null || true)
   [ -z "$files" ] && return
 

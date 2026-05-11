@@ -12,6 +12,12 @@ In rough priority order:
 4. **Vocab/glossary fills** — a lesson uses a term that isn't yet in `GLOSSARY.md`. PR an entry.
 5. **Voice fixes** — you spotted tutorial fiction (the *frictionless-clicks* trope where reality has ten steps and bureaucracy) or filler (the *fast-paced-world* opener that says nothing). PR a rewrite.
 
+## If you're authoring a new lesson or editing one substantially
+
+Read **`docs/COURSE-AUTHORING.md`** first. It covers the audience-vocabulary contract, the nine-element lesson anatomy, the M1+ diagram convention (simple-first analogy Mermaid visible + technical Mermaid wrapped in a `<details>` disclosure), the Mermaid `<br/>` rule, and the full voice-lint check inventory. Skipping that doc and freelancing a lesson is the most common way agents and humans both break the course's audience contract.
+
+If you're an AI agent (Claude, Gemini, Cursor, Copilot, etc.) running on this repo, **`CLAUDE.md`** at the root is your entry point — it lists the hard rules and points at the deeper authoring playbook.
+
 ## What we do NOT want yet
 
 - New module content. The course's V1 scope is locked (see `.planning/REQUIREMENTS.md`). Out-of-scope feature ideas live in `.planning/ROADMAP.md` Out of Scope.
