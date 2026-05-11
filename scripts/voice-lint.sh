@@ -17,6 +17,8 @@
 #   5. Broken relative paths from modules/**/*.md to repo-root cross-cutting docs (GLOSSARY.md, BUDGET.md, etc.).
 #   6. Jargon-density: terms marked Forbidden in docs/audience-vocabulary.md must not appear bare in that module's
 #      lessons; terms marked Requires-callout must appear inside a D-04 vocab-callout the first time they appear.
+#   7. Mermaid `<br>` / `<br/>` outside quoted node labels — GitHub's Mermaid renderer rejects HTML break tags in
+#      sequenceDiagram Notes, sequenceDiagram messages, and flowchart edge labels. Only `["..."]` node labels accept them.
 #
 # Note: `set -e` is intentionally omitted; grep returns 1 on no-match, which is our happy path.
 # Code review findings closed: WR-01..WR-05, IN-04 (see .planning/phases/01-foundation-front-door/01-REVIEW.md).
@@ -556,6 +558,64 @@ scan_jargon_density() {
   fi
 }
 
+# Mermaid <br>/<br/> outside quoted node labels check.
+#
+# GitHub's Mermaid parser rejects <br> and <br/> in sequenceDiagram Notes,
+# sequenceDiagram messages, and flowchart edge labels — the `<` token is read as
+# the start of an arrow shape. Only flowchart node labels wrapped in `["..."]`
+# accept HTML break tags. This check catches the unsafe contexts before render.
+#
+# Algorithm: stream every .md file; track when inside a ```mermaid ... ``` fence;
+# on each in-fence line, strip out `"..."` quoted regions, then look for <br>/<br/>
+# in the residue. Emit a violation per offending line.
+scan_mermaid_br() {
+  local mode="$1"
+  local roots
+  if [ "$mode" = "fixtures" ]; then
+    roots=(scripts/voice-lint-fixtures)
+  else
+    # Default scope: every .md file in the repo except the excluded dirs.
+    # We let `find` walk and apply the same exclusions as SCOPE_GLOBS.
+    roots=(.)
+  fi
+
+  echo "==> Scanning Mermaid blocks for <br> / <br/> outside quoted node labels..."
+
+  local files
+  files=$(find "${roots[@]}" -type f -name '*.md' \
+            -not -path '*/.planning/*' \
+            -not -path '*/.claude/*' \
+            -not -path '*/node_modules/*' \
+            $([ "$mode" != "fixtures" ] && printf -- '-not -path */voice-lint-fixtures/*') \
+            2>/dev/null || true)
+  [ -z "$files" ] && return
+
+  local file violations
+  while IFS= read -r file; do
+    [ -z "$file" ] && continue
+    violations=$(awk '
+      BEGIN { in_mermaid = 0 }
+      /^```mermaid[[:space:]]*$/ { in_mermaid = 1; next }
+      /^```[[:space:]]*$/ && in_mermaid { in_mermaid = 0; next }
+      in_mermaid {
+        # Strip every "..." quoted region (flowchart node labels — safe form).
+        stripped = $0
+        gsub(/"[^"]*"/, "", stripped)
+        if (stripped ~ /<br\/?>/) {
+          printf "%s:%d: Mermaid <br/<br/> outside quoted node label — GitHub renderer will reject; rewrite the note/message as a single line\n", FILENAME, NR
+        }
+      }
+    ' "$file" 2>/dev/null || true)
+    if [ -n "$violations" ]; then
+      # Increment per offending line (one violation per line emitted).
+      local count
+      count=$(printf '%s\n' "$violations" | wc -l | tr -d ' ')
+      printf 'VIOLATION (mermaid-br): %s\n' "$violations"
+      VIOLATION_COUNT=$((VIOLATION_COUNT + count))
+    fi
+  done < <(printf '%s\n' "$files")
+}
+
 # ===== Self-test mode =====
 # Each fixture in scripts/voice-lint-fixtures/ MUST trip the check it's designed for.
 # We run each scan_* function with mode="fixtures" and capture the violation count delta;
@@ -616,6 +676,19 @@ run_self_test() {
     echo "  self-test OK: jargon-density fixture tripped $((after - before)) violations"
   fi
 
+  # Mermaid <br> outside quoted node labels (fixture 07) — expect at least 3 violations
+  # (one sequenceDiagram Note, one sequenceDiagram message, one flowchart edge label).
+  before=$VIOLATION_COUNT
+  scan_mermaid_br fixtures >/tmp/voice-lint-selftest.out 2>&1 || true
+  after=$VIOLATION_COUNT
+  if [ "$((after - before))" -lt 3 ]; then
+    echo "SELFTEST FAIL: mermaid-br fixture (07) tripped only $((after - before)); expected >= 3 (Note + message + edge label)"
+    cat /tmp/voice-lint-selftest.out
+    fail=1
+  else
+    echo "  self-test OK: mermaid-br fixture tripped $((after - before)) violations"
+  fi
+
   if [ "$fail" -ne 0 ]; then
     echo "==> voice-lint.sh --self-test: FAIL"
     exit 1
@@ -635,6 +708,7 @@ scan_literal_phrases default
 scan_glossary_anchors default
 scan_broken_relative_paths default
 scan_jargon_density default
+scan_mermaid_br default
 
 if [ "$VIOLATION_COUNT" -eq 0 ]; then
   echo "==> voice-lint.sh: PASS (0 violations)"
