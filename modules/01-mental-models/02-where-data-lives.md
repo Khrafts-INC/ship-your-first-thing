@@ -54,7 +54,7 @@ flowchart TB
     direction LR
     UsersDrawer["Drawer: users"]
     PostsDrawer["Drawer: posts"]
-    UsersDrawer -.->|each post card<br/>names a user card| PostsDrawer
+    UsersDrawer -.->|each post card<br>names a user card| PostsDrawer
   end
 ```
 
@@ -79,10 +79,10 @@ sequenceDiagram
   participant Customer as Customer
   participant Receptionist as Receptionist
   participant Cabinet as Filing cabinet
-  Customer->>Receptionist: hands over a form:<br/>"what posts has Alice written?"
-  Receptionist->>Cabinet: opens the posts drawer,<br/>finds Alice's cards
+  Customer->>Receptionist: hands over a form:<br>"what posts has Alice written?"
+  Receptionist->>Cabinet: opens the posts drawer,<br>finds Alice's cards
   Cabinet-->>Receptionist: hands over the cards
-  Receptionist-->>Customer: hands back a paper:<br/>"here are Alice's posts"
+  Receptionist-->>Customer: hands back a paper:<br>"here are Alice's posts"
 ```
 
 > *Bridge to the real terms:* In a real web app, the customer is your browser, the receptionist is the server (the API), and the filing cabinet is the database. The form the customer hands over is an HTTP request; the language the receptionist uses to talk to the cabinet is SQL.

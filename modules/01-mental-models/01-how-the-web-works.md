@@ -91,7 +91,7 @@ sequenceDiagram
   Waiter->>Kitchen: brings the ticket
   Kitchen-->>Waiter: hands over the dish
   Waiter-->>Customer: delivers the dish
-  Note over Customer: dish has parts; customer<br/>asks waiter for each
+  Note over Customer: dish has parts; customer<br>asks waiter for each
   Customer->>Waiter: orders the side dish
   Waiter->>Kitchen: brings the side ticket
   Kitchen-->>Waiter: hands over the side
@@ -106,7 +106,7 @@ sequenceDiagram
   participant Server
   Browser->>Server: GET / (HTTP request)
   Server-->>Browser: 200 OK + HTML
-  Note over Browser: Parses HTML, finds<br/>references to CSS, JS, images
+  Note over Browser: Parses HTML, finds<br>references to CSS, JS, images
   Browser->>Server: GET /style.css
   Server-->>Browser: 200 OK + CSS
   Browser->>Server: GET /script.js
