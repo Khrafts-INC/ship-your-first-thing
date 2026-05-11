@@ -43,7 +43,7 @@ sequenceDiagram
   Waiter->>Kitchen: brings the ticket
   Kitchen-->>Waiter: hands over the dish
   Waiter-->>Customer: delivers the dish
-  Note over Customer: dish has parts; customer<br>asks waiter for each
+  Note over Customer: dish has parts — customer asks waiter for each
   Customer->>Waiter: orders the side dish
   Waiter->>Kitchen: brings the side ticket
   Kitchen-->>Waiter: hands over the side
