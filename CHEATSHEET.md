@@ -21,9 +21,14 @@ Plan: I want to {feature}. The constraints are {list}. The current state is in {
 *Reset Claude Code or Gemini CLI conversation history. Use between unrelated tasks; cuts token cost on the next prompt.*
 
 ```
-/tokens
+/context
 ```
-*Show current token usage in your conversation. Watch this when you're on Path 2 (Gemini CLI free tier) or Path 3 (Anthropic API token-careful) — see `BUDGET.md`.*
+*Show how much of your context window is in use (Claude Code). Watch this when you're on Path 2 (Gemini CLI free tier — use `/stats` there) or Path 3 (Anthropic API token-careful) — see `BUDGET.md`.*
+
+```
+/cost
+```
+*Show running session spend (Claude Code). Path 3 learners check this regularly.*
 
 ## Git basics
 
@@ -69,6 +74,25 @@ git reset --hard HEAD
 *Remove a file from the AI's context. Use when the AI keeps editing the wrong file.*
 
 ```
-/tokens
+/context
 ```
-*Show usage. Module 3 lesson covers when to act on the number.*
+*Show how much of your context window is in use (Claude Code). Module 3 lesson covers when to act on the number.*
+
+```
+/cost
+```
+*Show running session spend (Claude Code). Path 3 learners check this regularly.*
+
+```
+/compress
+```
+*Gemini CLI's equivalent of Claude Code's `/compact` — compresses conversation history without losing the gist. Same purpose, different keystroke.*
+
+```
+/stats
+```
+*Gemini CLI's equivalent of Claude Code's `/context` — show conversation stats including token usage in the current session.*
+
+## npm vs pnpm note (D-21)
+
+Lessons in this course teach **npm** (the default package manager for `create-next-app`; what Claude Code and Gemini CLI reach for by default). The deferred course platform (Phase 01.1, see ROADMAP) uses **pnpm** for security-cooling reasons. Both work. If you prefer pnpm for the thread project: `pnpm install` ↔ `npm install`; `pnpm add <pkg>` ↔ `npm install <pkg>`; `pnpm run dev` ↔ `npm run dev`. Lessons in M2/M3/M3.5 + the Phase 3 thread project use npm commands verbatim.

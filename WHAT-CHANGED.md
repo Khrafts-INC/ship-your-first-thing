@@ -11,6 +11,24 @@ Each entry has the format:
 
 ---
 
+## 2026-05-14 — Phase 2 Wave 1 scaffolding + slash-command migration
+
+**What changed:** Phase 2 Wave 1 ships three coordinated cross-cutting updates ahead of Module 2/3/3.5 lesson authoring.
+
+1. **Slash-command name correction.** The Claude Code canonical command names for context-window and spend tracking are `/context` (window usage) + `/cost` (spend) — NOT the legacy name. The legacy name appeared in `CHEATSHEET.md` (AI prompts + Token discipline sections), `BUDGET.md` (Path 2 + Path 3 prose), and `GLOSSARY.md` (the `token-discipline` entry). All three are corrected in this revision. Gemini CLI's equivalents `/compress` (= Claude's `/compact`) and `/stats` (= Claude's `/context`) are added to `CHEATSHEET.md` alongside the Claude Code commands.
+
+2. **AI agent ignore-file templates shipped** (`thread-project-template/`). The `thread-project-template/` directory at repo root now ships five files: `README.md`, `.gitignore`, `.claudeignore`, `.geminiignore`, `.claude/settings.json`. The `.claudeignore` ships as a community-pattern + future-proofing template (Claude Code does NOT natively support `.claudeignore` in May 2026 — see GitHub issue #29455). `.claude/settings.json` with `permissions.deny` rules is the officially-supported hard-enforcement mechanism Phase 3 Chunk 0 will copy. Module 2 Lesson 6 (`modules/02-toolchain/06-ai-coding-agents.md`) references both.
+
+3. **Voice-lint check #8 (M3 dual-agent rendering).** `scripts/voice-lint.sh` gets a new check that every Module 3 lesson (`modules/03-the-loop/0[1-4]*.md`) contains both `Claude Code:` and `Gemini CLI:` as standalone-line labels. Fixture `scripts/voice-lint-fixtures/08-m3-dual-agent.md` trips the check; wired into `--self-test`. Enforces D-27 (every M3 lesson is dual-agent) programmatically.
+
+**Affected lessons / artifacts:** `CHEATSHEET.md`, `BUDGET.md`, `GLOSSARY.md`, `WHAT-CHANGED.md` (this entry), `CONTRIBUTING.md` (lint reference line). New files: `thread-project-template/{README.md,.gitignore,.claudeignore,.geminiignore,.claude/settings.json}`, `modules/03-the-loop/scratch/{index.html,README.md}`, `modules/03.5-reading-code/sample-app/*` (8 files), `scripts/voice-lint-fixtures/08-m3-dual-agent.md`.
+
+**What learners should do:** If you've been using the legacy slash-command name from an older copy of `CHEATSHEET.md`, the actual command in Claude Code is `/context` (for window usage) and `/cost` (for spend). On Gemini CLI, the analogous commands are `/stats` (window usage) and `/compress` (= Claude's `/compact`).
+
+**What contributors should do:** Run `./scripts/voice-lint.sh --self-test` after pulling — fixture 08 must trip check #8. If you write a Module 3 lesson, both `Claude Code:` and `Gemini CLI:` MUST appear as standalone-line labels (D-27); the lint enforces it.
+
+---
+
 ## 2026-05-10 — Phase 1 gap closure (M0/M1 audience pass, M1 bundle 3 split, voice-lint upgrade)
 
 **What changed:** After the 01-HUMAN-UAT.md walkthrough surfaced three editorial gaps in the original Phase 1 close, plans 01-6 / 01-7 / 01-8 shipped to close them.

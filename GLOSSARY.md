@@ -175,7 +175,7 @@ The text panel inside a code editor (or as a standalone app) where you type comm
 Used in: [Module 0 — Codespaces walkthrough](./modules/00-welcome/05-codespaces-walkthrough.md).
 
 ### token-discipline
-The set of habits that keep AI-coding sessions cheap on pay-per-token plans: clearing context between unrelated tasks, watching the running token count, summarizing long histories, and choosing the smaller model when the bigger one isn't needed. *Example: Module 3 teaches `/clear`, `/compact`, and `/tokens` as the three core moves.*
+The set of habits that keep AI-coding sessions cheap on pay-per-token plans: clearing context between unrelated tasks, watching the running token count, summarizing long histories, and choosing the smaller model when the bigger one isn't needed. *Example: Module 3 teaches `/clear`, `/compact`, `/context` (window usage), and `/cost` (spend) on Claude Code, and `/clear`, `/compress`, `/stats` as the Gemini CLI equivalents.*
 Used in: [Module 0 — Cost-path triage](./modules/00-welcome/03-cost-path-triage.md).
 
 ## U
