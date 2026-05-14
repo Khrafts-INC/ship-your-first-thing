@@ -10,15 +10,26 @@
   <div id="content"></div>
   <script>
     // Module 3 Lesson 1 — the AI agent added today's date below the tagline.
-    // This is the post-L1 state shipped with the course; the lesson author will
+    // Module 3 Lesson 2 — the AI agent added a button that shows or hides the date.
+    // This is the post-L2 state shipped with the course; the lesson author will
     // replace this block with the verbatim code from the captured capture session
-    // (see screenshots/m3/01-introducing-the-loop/CAPTURE.md). Real captures only
+    // (see screenshots/m3/02-planning-vs-execution/CAPTURE.md). Real captures only
     // per D-28 — the snippet below is a representative example to keep the file
     // shape concrete until the capture lands.
     const dateEl = document.createElement('p');
     dateEl.id = 'date';
     dateEl.textContent = new Date().toLocaleDateString();
     document.querySelector('p').after(dateEl);
+
+    const toggleBtn = document.createElement('button');
+    toggleBtn.id = 'toggle-date';
+    toggleBtn.textContent = 'Hide date';
+    toggleBtn.addEventListener('click', () => {
+      const hidden = dateEl.style.display === 'none';
+      dateEl.style.display = hidden ? '' : 'none';
+      toggleBtn.textContent = hidden ? 'Hide date' : 'Show date';
+    });
+    dateEl.after(toggleBtn);
   </script>
 </body>
 </html>
