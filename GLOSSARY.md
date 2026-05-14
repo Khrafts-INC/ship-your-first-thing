@@ -74,6 +74,10 @@ Used in: [Module 0 — Hardware check](./modules/00-welcome/02-hardware-check.md
 A saved snapshot of changes in a git repository, with a one-line description. *Example: `git commit -m "add login button"` creates a commit containing every file you previously staged with `git add`.*
 Used in: [Module 2 — git and GitHub](./modules/02-toolchain/05-git-and-github.md).
 
+### context-window
+The amount of text an AI agent can see at once — your conversation history plus any file content it has loaded. Finite; as the conversation grows, older parts scroll out. *Example: Claude Code shows current usage via `/context`; Gemini CLI shows it via `/stats`.*
+Used in: [Module 3 — Planning vs execution conversations](./modules/03-the-loop/02-planning-vs-execution.md).
+
 ### cookie
 A small piece of data the browser stores and re-sends to the same site on every request. *Example: a session cookie tells the server "this is the same Alice who logged in 5 minutes ago."*
 Used in: [Module 1 — Who can do what](./modules/01-mental-models/03-who-can-do-what.md).
@@ -101,6 +105,10 @@ Used in: [Module 1 — How the web works](./modules/01-mental-models/01-how-the-
 ### evaluate
 The "evaluate" step of the agent loop — reading the agent's output and deciding if it matches your intent. *Example: the agent says it added today's date; you check the page and confirm the date is there.*
 Used in: [Module 3 — Introducing the loop](./modules/03-the-loop/01-introducing-the-loop.md).
+
+### execution-conversation
+An AI-agent session where you ask the agent to actually make the change. Distinct from a planning conversation (no code-writing) which often precedes it. *Example: "OK, please proceed with the plan" opens an execution conversation.*
+Used in: [Module 3 — Planning vs execution conversations](./modules/03-the-loop/02-planning-vs-execution.md).
 
 ## F
 
@@ -190,6 +198,10 @@ Used in: [Module 2 — The package manager (npm)](./modules/02-toolchain/04-pack
 A tool that downloads and tracks the code your project depends on. *Example: npm is the package manager this course uses; pnpm is an alternative the deferred course platform uses.*
 Used in: [Module 2 — The package manager (npm)](./modules/02-toolchain/04-package-manager-npm.md).
 
+### planning-conversation
+An AI-agent session where you ask the agent to describe what it WOULD do without writing code yet. *Example: a prompt starting with "Plan:" and ending with "don't write code yet" opens a planning conversation.*
+Used in: [Module 3 — Planning vs execution conversations](./modules/03-the-loop/02-planning-vs-execution.md).
+
 ### prompt
 The specific text you send to an AI agent describing what you want. *Example: "Add today's date below the tagline" is a prompt; a series of prompts plus the agent's responses is a session.*
 Used in: [Module 3 — Introducing the loop](./modules/03-the-loop/01-introducing-the-loop.md).
@@ -255,6 +267,30 @@ Used in: [Module 1 — Who can do what](./modules/01-mental-models/03-who-can-do
 ### slash-command
 A short keyword starting with `/` typed inside an AI agent's session to control the session itself rather than asking the agent to do work. *Example: `/clear` resets conversation history; `/context` shows context-window usage on Claude Code; `/stats` is Gemini CLI's equivalent.*
 Used in: [Module 2 — AI coding agents](./modules/02-toolchain/06-ai-coding-agents.md).
+
+### slash-clear
+The `/clear` slash command — reset the conversation history; start a fresh session inside the same agent invocation. Same keystroke on Claude Code AND Gemini CLI. *Example: type `/clear` between unrelated tasks.*
+Used in: [Module 3 — Planning vs execution conversations](./modules/03-the-loop/02-planning-vs-execution.md).
+
+### slash-compact
+The `/compact` slash command (Claude Code) — compress conversation history without losing the gist. Gemini CLI's equivalent is `/compress`. *Example: use mid-session when context-window usage is high but you do not want to `/clear` and lose recent context.*
+Used in: [Module 3 — Planning vs execution conversations](./modules/03-the-loop/02-planning-vs-execution.md).
+
+### slash-compress
+The `/compress` slash command (Gemini CLI) — Gemini CLI's equivalent of Claude Code's `/compact`. Same purpose, different keystroke. *Example: Path 2 learners use this whenever Claude Code learners would use `/compact`.*
+Used in: [Module 3 — Planning vs execution conversations](./modules/03-the-loop/02-planning-vs-execution.md).
+
+### slash-context
+The `/context` slash command (Claude Code) — shows how much of the context window is currently in use. Gemini CLI's equivalent is `/stats`. *Example: type `/context` to see usage as a percentage or a tokens-used / tokens-remaining pair.*
+Used in: [Module 3 — Planning vs execution conversations](./modules/03-the-loop/02-planning-vs-execution.md).
+
+### slash-cost
+The `/cost` slash command (Claude Code) — shows running session spend in dollars. Most relevant to Path 3 (Anthropic API token-careful) learners. *Example: type `/cost` to see spend so far this session.*
+Used in: [Module 3 — Planning vs execution conversations](./modules/03-the-loop/02-planning-vs-execution.md).
+
+### slash-stats
+The `/stats` slash command (Gemini CLI) — Gemini CLI's equivalent of Claude Code's `/context`. Shows conversation statistics including token usage. *Example: Path 2 learners use this whenever Claude Code learners would use `/context`.*
+Used in: [Module 3 — Planning vs execution conversations](./modules/03-the-loop/02-planning-vs-execution.md).
 
 ### sql
 Structured Query Language — the standard way to ask a relational database for rows. *Example: `SELECT * FROM posts ORDER BY created_at DESC`.*

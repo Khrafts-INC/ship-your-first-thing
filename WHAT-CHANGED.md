@@ -11,6 +11,18 @@ Each entry has the format:
 
 ---
 
+## 2026-05-14 — Phase 2 Wave 3 M3 L2 transcripts captured
+
+**What changed:** Module 3 Lesson 2 (`modules/03-the-loop/02-planning-vs-execution.md`) shipped, with paired Claude Code + Gemini CLI captures from 2026-05-14 (D-28). The lesson teaches planning vs execution conversations and introduces the six core slash commands (`/clear`, `/compact`, `/context`, `/cost` for Claude Code; `/clear`, `/compress`, `/stats` for Gemini CLI). The scratch/index.html starter is progressed to include a show/hide button below the date (D-31 L2 progression).
+
+**Affected lessons / artifacts:** `modules/03-the-loop/02-planning-vs-execution.md` (new); `modules/03-the-loop/scratch/index.html` (button + date logic). Nine new GLOSSARY anchors: `context-window`, `execution-conversation`, `planning-conversation`, `slash-clear`, `slash-compact`, `slash-compress`, `slash-context`, `slash-cost`, `slash-stats`. Capture brief at `screenshots/m3/02-planning-vs-execution/CAPTURE.md`.
+
+**What learners should do:** If `/context` (Claude Code) or `/stats` (Gemini CLI) returns a different output shape than the lesson shows, that is a freshness signal; the four-command kit is durable but the keystroke output may evolve. The lesson's `> **Last captured:** 2026-05-14.` callout sets expectations.
+
+**What contributors should do:** The transcripts are real captures, not idealized (D-28). If a re-capture is needed (e.g., Claude Code 2.x ships a different `/context` output shape, or Gemini CLI renames `/stats`), open a PR that re-runs L2's three capture phases (planning conversation, execution conversation, slash-command outputs) against `modules/03-the-loop/scratch/index.html` in its post-L1 state, replaces the six fenced blocks, bumps the `updated:` and `Last captured:` dates, and adds a new WHAT-CHANGED entry.
+
+---
+
 ## 2026-05-14 — Phase 2 Wave 3 M3 L1 transcripts captured
 
 **What changed:** Module 3 Lesson 1 (`modules/03-the-loop/01-introducing-the-loop.md`) shipped, with paired Claude Code + Gemini CLI transcripts captured against `modules/03-the-loop/scratch/index.html` on 2026-05-14 (D-28). The scratch file's `<script>` body was updated from the empty starter to the actual code one of the agents produced during capture (per D-28 — real, not idealized).
