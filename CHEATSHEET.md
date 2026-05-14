@@ -30,6 +30,35 @@ Plan: I want to {feature}. The constraints are {list}. The current state is in {
 ```
 *Show running session spend (Claude Code). Path 3 learners check this regularly.*
 
+## AI agent install + hygiene
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+*Install Claude Code on macOS or Linux. Re-check `VERSIONS.md` for the latest verified command.*
+
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+*Install Claude Code on Windows (PowerShell).*
+
+```bash
+npm install -g @google/gemini-cli
+```
+*Install Gemini CLI on any platform with Node 20 or newer.*
+
+```bash
+claude --version
+```
+*Confirm Claude Code installed (Path 1 or Path 3).*
+
+```bash
+gemini --version
+```
+*Confirm Gemini CLI installed (Path 2).*
+
+Hygiene templates ship at `thread-project-template/` — copy into a new project so AI agents skip secrets, planning notes, and dependency folders by default. See Module 2 Lesson 6.
+
 ## Terminal basics
 
 ```bash

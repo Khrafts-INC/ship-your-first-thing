@@ -50,6 +50,10 @@ Used in: [Module 1 — How the web works](./modules/01-mental-models/01-how-the-
 Continuous integration / continuous deployment. The automated path from "I committed code" to "it's live on the internet." *Example: pushing to `main` triggers Vercel to build and deploy your Next.js app.*
 Used in: [Module 1 — How it goes live](./modules/01-mental-models/04-how-it-goes-live.md).
 
+### claude-code
+Anthropic's command-line AI coding agent; this course's recommended primary agent. *Example: install on macOS or Linux with `curl -fsSL https://claude.ai/install.sh | bash`; on Windows in PowerShell with `irm https://claude.ai/install.ps1 | iex`.*
+Used in: [Module 2 — AI coding agents](./modules/02-toolchain/06-ai-coding-agents.md).
+
 ### code-editor
 A program that lets you read and edit source files with niceties like syntax highlighting, search across files, and integrated tools. *Example: Visual Studio Code (VS Code) is the editor a Codespace presents in your browser.*
 Used in: [Module 0 — Hardware check](./modules/00-welcome/02-hardware-check.md).
@@ -95,6 +99,10 @@ The portion of a paid service you can use at no cost — usually capped by hours
 Used in: [Module 0 — Cost-path triage](./modules/00-welcome/03-cost-path-triage.md).
 
 ## G
+
+### gemini-cli
+Google's open-source command-line AI coding agent; this course's genuinely-free path (Path 2 in `BUDGET.md`). *Example: install via `npm install -g @google/gemini-cli` on any platform with Node 20 or newer.*
+Used in: [Module 2 — AI coding agents](./modules/02-toolchain/06-ai-coding-agents.md).
 
 ### git
 A tool that tracks every version of every file in a project. Used to commit changes locally and push them to GitHub. *Example: `git commit -m "add login button"`.*
@@ -221,6 +229,10 @@ Used in: [Module 1 — Who can do what](./modules/01-mental-models/03-who-can-do
 ### session-token
 A string the browser sends with each request to prove "I'm the same person who just authenticated." Often delivered as a cookie. *Example: a JWT or an opaque session id.*
 Used in: [Module 1 — Who can do what](./modules/01-mental-models/03-who-can-do-what.md).
+
+### slash-command
+A short keyword starting with `/` typed inside an AI agent's session to control the session itself rather than asking the agent to do work. *Example: `/clear` resets conversation history; `/context` shows context-window usage on Claude Code; `/stats` is Gemini CLI's equivalent.*
+Used in: [Module 2 — AI coding agents](./modules/02-toolchain/06-ai-coding-agents.md).
 
 ### sql
 Structured Query Language — the standard way to ask a relational database for rows. *Example: `SELECT * FROM posts ORDER BY created_at DESC`.*
