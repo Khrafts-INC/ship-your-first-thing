@@ -128,6 +128,12 @@ Used in: [Module 1 — How it goes live](./modules/01-mental-models/04-how-it-go
 A way of writing formatted documents using simple punctuation marks like `#` for headings, `*` for emphasis, and triple-backticks for code blocks. *Example: this course is written in markdown; you can read the source on github.com.*
 Used in: [Module 0 — Hardware check](./modules/00-welcome/02-hardware-check.md).
 
+## N
+
+### node
+The standard runtime for JavaScript code outside the browser. *Example: `node --version` in a Codespace prints the installed Node version; this course pins Node 20.x LTS in `VERSIONS.md`.*
+Used in: [Module 2 — The runtime (Node)](./modules/02-toolchain/03-runtime-node.md).
+
 ## Q
 
 ### query
@@ -151,6 +157,10 @@ Used in: [Module 1 — Where data lives, how programs talk](./modules/01-mental-
 ### row
 A single record in a database table — like one index card in a filing-cabinet drawer.
 Used in: [Module 1 — Where data lives, how programs talk](./modules/01-mental-models/02-where-data-lives.md).
+
+### runtime
+A program that reads source code and executes it. Every language has at least one. *Example: Node is the runtime for JavaScript outside the browser; the browser itself has its own JavaScript runtime built in.*
+Used in: [Module 2 — The runtime (Node)](./modules/02-toolchain/03-runtime-node.md).
 
 ## S
 

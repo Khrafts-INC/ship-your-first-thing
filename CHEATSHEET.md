@@ -62,6 +62,23 @@ rmdir <name>
 ```
 *Remove an EMPTY directory. Safer than `rm -rf` for cleanup; errors if the directory isn't empty.*
 
+## Runtime + tooling
+
+```bash
+node --version
+```
+*Print the installed Node version. Sanity check after opening a fresh Codespace; this course pins Node 20.x LTS (see `VERSIONS.md`).*
+
+```bash
+node
+```
+*Open Node's REPL (interactive prompt). Type JavaScript expressions and see results; `.exit` to leave.*
+
+```bash
+node <file.js>
+```
+*Run a JavaScript file directly with Node. Module 4 onward, you'll mostly use `npm run dev` instead — the project scaffold wires this up for you.*
+
 ## Git basics
 
 ```bash
