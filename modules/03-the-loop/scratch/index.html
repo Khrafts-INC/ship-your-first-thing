@@ -8,14 +8,30 @@
   <h1>{your name}</h1>
   <p>{your tagline}</p>
   <div id="content"></div>
+  <!--
+    Module 3 Lesson 3 — the AI agent added the static list below.
+    The three titles are the ones the agent INVENTED (a hallucination —
+    the agent had no way of knowing the learner's actual favorite books).
+    The lesson SHIPS this hallucinated list verbatim because recognizing it
+    is the point; Module 3 Lesson 4 walks through the steer that replaces
+    these with placeholder text. Per D-28 the lesson author will swap this
+    block with the verbatim agent output from the captured session — see
+    screenshots/m3/03-reading-plans-recognizing-wrong/CAPTURE.md. The titles
+    below are a representative example to keep the file shape concrete until
+    the real capture lands.
+  -->
+  <ul>
+    <li>The Pragmatic Programmer</li>
+    <li>Code Complete</li>
+    <li>The Mythical Man-Month</li>
+  </ul>
   <script>
     // Module 3 Lesson 1 — the AI agent added today's date below the tagline.
     // Module 3 Lesson 2 — the AI agent added a button that shows or hides the date.
-    // This is the post-L2 state shipped with the course; the lesson author will
-    // replace this block with the verbatim code from the captured capture session
-    // (see screenshots/m3/02-planning-vs-execution/CAPTURE.md). Real captures only
-    // per D-28 — the snippet below is a representative example to keep the file
-    // shape concrete until the capture lands.
+    // L1 + L2 code preserved verbatim from the prior lesson; L3 added the static
+    // list element in the HTML body above this script block (the agent chose
+    // static HTML over JavaScript-created elements — a typical shape for static
+    // content that does not need dynamic logic).
     const dateEl = document.createElement('p');
     dateEl.id = 'date';
     dateEl.textContent = new Date().toLocaleDateString();
