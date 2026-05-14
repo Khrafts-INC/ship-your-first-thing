@@ -79,6 +79,28 @@ node <file.js>
 ```
 *Run a JavaScript file directly with Node. Module 4 onward, you'll mostly use `npm run dev` instead — the project scaffold wires this up for you.*
 
+## Package management
+
+```bash
+npm install
+```
+*Read `package.json` and download every dependency into `node_modules/`. The first command to run after cloning a fresh project that uses npm.*
+
+```bash
+npm install <package-name>
+```
+*Add a new package to `dependencies` AND download it. Example: `npm install date-fns`.*
+
+```bash
+npm uninstall <package-name>
+```
+*Remove a package from `dependencies` AND delete it from `node_modules/`.*
+
+```bash
+npm run dev
+```
+*Start the development server defined in `package.json`'s `scripts.dev`. Module 4 onward, you'll run this every day to see your app live in the browser preview.*
+
 ## Git basics
 
 ```bash

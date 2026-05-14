@@ -64,6 +64,10 @@ Used in: [Module 1 — Who can do what](./modules/01-mental-models/03-who-can-do
 A program that stores structured data in tables and answers queries about it. *Example: PostgreSQL, Supabase's database engine.*
 Used in: [Module 1 — Where data lives, how programs talk](./modules/01-mental-models/02-where-data-lives.md).
 
+### dependency
+A package your project NEEDS to run, listed under `dependencies` in `package.json`. *Example: the Module 3.5 sample-app's `package.json` lists `next`, `react`, and `react-dom` as dependencies.*
+Used in: [Module 2 — The package manager (npm)](./modules/02-toolchain/04-package-manager-npm.md).
+
 ### deployment
 The act of moving an app from a developer's laptop (localhost) to a public server so anyone on the internet can reach it. *Example: pushing to GitHub and letting Vercel build and host the result.*
 Used in: [Module 1 — How it goes live](./modules/01-mental-models/04-how-it-goes-live.md).
@@ -133,6 +137,20 @@ Used in: [Module 0 — Hardware check](./modules/00-welcome/02-hardware-check.md
 ### node
 The standard runtime for JavaScript code outside the browser. *Example: `node --version` in a Codespace prints the installed Node version; this course pins Node 20.x LTS in `VERSIONS.md`.*
 Used in: [Module 2 — The runtime (Node)](./modules/02-toolchain/03-runtime-node.md).
+
+### npm
+The standard package manager for JavaScript code; bundled with Node. *Example: `npm install` downloads everything listed in `package.json` into a `node_modules/` folder.*
+Used in: [Module 2 — The package manager (npm)](./modules/02-toolchain/04-package-manager-npm.md).
+
+## P
+
+### package
+A bundled bit of reusable code, published to a registry so any project can pull it in. *Example: `date-fns` is a package that handles date formatting; `next` is a package that provides the Next.js framework.*
+Used in: [Module 2 — The package manager (npm)](./modules/02-toolchain/04-package-manager-npm.md).
+
+### package-manager
+A tool that downloads and tracks the code your project depends on. *Example: npm is the package manager this course uses; pnpm is an alternative the deferred course platform uses.*
+Used in: [Module 2 — The package manager (npm)](./modules/02-toolchain/04-package-manager-npm.md).
 
 ## Q
 
