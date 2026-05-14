@@ -36,6 +36,10 @@ Used in: [Module 1 — Who can do what](./modules/01-mental-models/03-who-can-do
 
 ## B
 
+### branch
+An independent line of commits in a git repository, used to try a change without affecting the main history. *Example: `git checkout -b add-login` creates and switches to a new branch named `add-login`; commits on that branch do not show up on `main` until you merge.*
+Used in: [Module 2 — git and GitHub](./modules/02-toolchain/05-git-and-github.md).
+
 ### browser
 A program on your computer that knows how to ask servers for webpages and render them. *Example: Chrome, Firefox, Safari.*
 Used in: [Module 1 — How the web works](./modules/01-mental-models/01-how-the-web-works.md).
@@ -53,6 +57,10 @@ Used in: [Module 0 — Hardware check](./modules/00-welcome/02-hardware-check.md
 ### codespace
 A development environment GitHub runs for you on a remote machine; you reach it from your browser, but the files and commands live on a computer GitHub manages. *Example: opening this course's repo and clicking `Create codespace on main` boots a Codespace with the editor and terminal ready.*
 Used in: [Module 0 — Hardware check](./modules/00-welcome/02-hardware-check.md).
+
+### commit
+A saved snapshot of changes in a git repository, with a one-line description. *Example: `git commit -m "add login button"` creates a commit containing every file you previously staged with `git add`.*
+Used in: [Module 2 — git and GitHub](./modules/02-toolchain/05-git-and-github.md).
 
 ### cookie
 A small piece of data the browser stores and re-sends to the same site on every request. *Example: a session cookie tells the server "this is the same Alice who logged in 5 minutes ago."*
@@ -132,6 +140,10 @@ Used in: [Module 1 — How it goes live](./modules/01-mental-models/04-how-it-go
 A way of writing formatted documents using simple punctuation marks like `#` for headings, `*` for emphasis, and triple-backticks for code blocks. *Example: this course is written in markdown; you can read the source on github.com.*
 Used in: [Module 0 — Hardware check](./modules/00-welcome/02-hardware-check.md).
 
+### merge
+The act of combining the commits from one git branch into another. *Example: `git merge add-login` brings the commits from the `add-login` branch into whichever branch you are currently on.*
+Used in: [Module 2 — git and GitHub](./modules/02-toolchain/05-git-and-github.md).
+
 ## N
 
 ### node
@@ -152,6 +164,14 @@ Used in: [Module 2 — The package manager (npm)](./modules/02-toolchain/04-pack
 A tool that downloads and tracks the code your project depends on. *Example: npm is the package manager this course uses; pnpm is an alternative the deferred course platform uses.*
 Used in: [Module 2 — The package manager (npm)](./modules/02-toolchain/04-package-manager-npm.md).
 
+### pull
+Fetch commits from a remote git host (like GitHub) and merge them into your local copy. *Example: `git pull` at the start of a coding session brings down any commits you (or someone else) pushed from another machine.*
+Used in: [Module 2 — git and GitHub](./modules/02-toolchain/05-git-and-github.md).
+
+### push
+Send commits from your computer to a remote git host. *Example: `git push` after a commit makes the snapshot visible on GitHub to anyone with access to the repository.*
+Used in: [Module 2 — git and GitHub](./modules/02-toolchain/05-git-and-github.md).
+
 ## Q
 
 ### query
@@ -163,6 +183,10 @@ Used in: [Module 1 — Where data lives, how programs talk](./modules/01-mental-
 ### rate-limit
 A cap on how many calls you can make to a service in a window of time, after which the service refuses or delays your calls until the window resets. *Example: the Gemini CLI free tier enforces daily caps on requests-per-minute and requests-per-day.*
 Used in: [Module 0 — Cost-path triage](./modules/00-welcome/03-cost-path-triage.md).
+
+### repository
+A project's full history of commits, tracked by git. Often shortened to "repo." *Example: this course is one git repository; you can clone the whole history to your computer with `git clone`.*
+Used in: [Module 2 — git and GitHub](./modules/02-toolchain/05-git-and-github.md).
 
 ### request
 A structured message asking a server for something — like a paper form handed to a receptionist. *Example: `GET /api/posts` is a request.*
