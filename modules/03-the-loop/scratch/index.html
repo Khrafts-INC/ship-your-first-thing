@@ -9,29 +9,37 @@
   <p>{your tagline}</p>
   <div id="content"></div>
   <!--
-    Module 3 Lesson 3 — the AI agent added the static list below.
-    The three titles are the ones the agent INVENTED (a hallucination —
-    the agent had no way of knowing the learner's actual favorite books).
-    The lesson SHIPS this hallucinated list verbatim because recognizing it
-    is the point; Module 3 Lesson 4 walks through the steer that replaces
-    these with placeholder text. Per D-28 the lesson author will swap this
-    block with the verbatim agent output from the captured session — see
-    screenshots/m3/03-reading-plans-recognizing-wrong/CAPTURE.md. The titles
-    below are a representative example to keep the file shape concrete until
-    the real capture lands.
+    Module 3 Lesson 4 — final M3 state.
+    Lesson 1 added today's date below the tagline (script block below).
+    Lesson 2 added a button that hides or shows the date (script block below).
+    Lesson 3 added a static <ul> with three hallucinated book titles in this
+    spot (the agent invented them because the ask was under-specified).
+    Lesson 4 ran two steers against that list: (a) replace the invented
+    titles with placeholder text, then (b) add inline CSS to give the list
+    a wooden background and some line spacing — the "real bookshelf" ask
+    after scoping it back from over-engineering.
+    Per D-28 the lesson author will swap this block with the verbatim agent
+    output from the captured Phase C session — see
+    screenshots/m3/04-steering-and-recovery/CAPTURE.md. The inline CSS and
+    placeholder text below are a representative example to keep the file
+    shape concrete until the real capture lands.
+    Per D-31 this entire scratch/ directory is throwaway. The lesson ends
+    with: "you can delete the scratch directory now — your real project
+    starts in Module 4."
   -->
-  <ul>
-    <li>The Pragmatic Programmer</li>
-    <li>Code Complete</li>
-    <li>The Mythical Man-Month</li>
+  <ul style="background-color: #8b5a2b; color: #fff; padding: 1em 2em; line-height: 1.5em; border-radius: 4px; list-style: none;">
+    <li>add your three favorite books here</li>
+    <li>add your three favorite books here</li>
+    <li>add your three favorite books here</li>
   </ul>
   <script>
     // Module 3 Lesson 1 — the AI agent added today's date below the tagline.
     // Module 3 Lesson 2 — the AI agent added a button that shows or hides the date.
-    // L1 + L2 code preserved verbatim from the prior lesson; L3 added the static
-    // list element in the HTML body above this script block (the agent chose
-    // static HTML over JavaScript-created elements — a typical shape for static
-    // content that does not need dynamic logic).
+    // Module 3 Lesson 3 — the AI agent added a static <ul> of three hallucinated
+    //   book titles in the HTML body above this script block.
+    // Module 3 Lesson 4 — two steers against that list: (a) replace the invented
+    //   titles with placeholder text, then (b) inline CSS for a wooden background.
+    //   The script body below is preserved verbatim from Lessons 1 + 2.
     const dateEl = document.createElement('p');
     dateEl.id = 'date';
     dateEl.textContent = new Date().toLocaleDateString();
