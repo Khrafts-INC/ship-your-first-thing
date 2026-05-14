@@ -11,6 +11,18 @@ Each entry has the format:
 
 ---
 
+## 2026-05-14 — Phase 2 Wave 3 M3 L1 transcripts captured
+
+**What changed:** Module 3 Lesson 1 (`modules/03-the-loop/01-introducing-the-loop.md`) shipped, with paired Claude Code + Gemini CLI transcripts captured against `modules/03-the-loop/scratch/index.html` on 2026-05-14 (D-28). The scratch file's `<script>` body was updated from the empty starter to the actual code one of the agents produced during capture (per D-28 — real, not idealized).
+
+**Affected lessons / artifacts:** `modules/03-the-loop/01-introducing-the-loop.md` (new lesson); `modules/03-the-loop/scratch/index.html` (`<script>` body filled with the date-display code the agent produced). Six new GLOSSARY anchors: `agent-loop`, `ask`, `evaluate`, `intent`, `prompt`, `steer`. Screenshots and capture brief at `screenshots/m3/01-introducing-the-loop/`.
+
+**What learners should do:** If your `claude` or `gemini` session in 2026 looks meaningfully different from the transcripts in the lesson, that is a freshness signal — the lesson's `> **Last captured:** 2026-05-14.` callout is there to set your expectations. Your loop still runs; the keystrokes may have shifted.
+
+**What contributors should do:** The transcripts are real captures, not idealized. If a re-capture is needed (e.g., Claude Code 2.x ships and the response shape changes, or Gemini CLI updates its CLI UI), open a PR that re-runs the L1 capture session against `modules/03-the-loop/scratch/index.html`, replaces the fenced blocks with the new transcripts, bumps the `updated:` date AND `Last captured:` date in the lesson, and adds a new WHAT-CHANGED entry.
+
+---
+
 ## 2026-05-14 — Phase 2 Wave 1 scaffolding + slash-command migration
 
 **What changed:** Phase 2 Wave 1 ships three coordinated cross-cutting updates ahead of Module 2/3/3.5 lesson authoring.

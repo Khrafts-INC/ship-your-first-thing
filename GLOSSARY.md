@@ -14,6 +14,10 @@
 
 ## A
 
+### agent-loop
+The iterative cycle of intent → ask → evaluate → steer, repeated until the AI agent has produced what you wanted. *Example: every Module 3 lesson is one or more iterations of the agent loop.*
+Used in: [Module 3 — Introducing the loop](./modules/03-the-loop/01-introducing-the-loop.md).
+
 ### ai-coding-agent
 A program that reads your project files, plans changes, and writes code on your behalf — guided by a conversation with you. *Example: Claude Code and Gemini CLI are the two AI coding agents this course uses.*
 Used in: [Module 0 — Welcome](./modules/00-welcome/01-welcome.md).
@@ -25,6 +29,10 @@ Used in: [Module 1 — Where data lives, how programs talk](./modules/01-mental-
 ### api-key
 A long string that identifies your account when a program calls a paid (or rate-limited) service on your behalf. Treat it like a password: never paste it into chat, never commit it to a public repo. *Example: a Gemini API key starts with `AI...`; an Anthropic API key starts with `sk-ant-...`.*
 Used in: [Module 0 — Account creation](./modules/00-welcome/04-account-creation.md).
+
+### ask
+The "ask" step of the agent loop — writing a specific request the agent can act on, given the intent. *Example: turning the intent "I want today's date below the tagline" into the ask "Add today's date below the tagline in `modules/03-the-loop/scratch/index.html`."*
+Used in: [Module 3 — Introducing the loop](./modules/03-the-loop/01-introducing-the-loop.md).
 
 ### authentication
 Confirming you are who you claim to be. Sometimes shortened to "authn." *Example: a password check, or clicking a magic link sent to your email.*
@@ -88,6 +96,12 @@ Used in: [Module 1 — How it goes live](./modules/01-mental-models/04-how-it-go
 Domain Name System — the system that translates a human-readable URL into the IP address of the actual server. *Example: when you type `example.com`, DNS resolves it to `93.184.216.34` so the browser knows which server to ask.*
 Used in: [Module 1 — How the web works](./modules/01-mental-models/01-how-the-web-works.md).
 
+## E
+
+### evaluate
+The "evaluate" step of the agent loop — reading the agent's output and deciding if it matches your intent. *Example: the agent says it added today's date; you check the page and confirm the date is there.*
+Used in: [Module 3 — Introducing the loop](./modules/03-the-loop/01-introducing-the-loop.md).
+
 ## F
 
 ### foreign-key
@@ -136,6 +150,10 @@ Used in: [Module 1 — How the web works](./modules/01-mental-models/01-how-the-
 An editor that bundles a text editor, a file browser, a terminal, and language-aware tooling into one program. The "I" is for "integrated." *Example: Visual Studio Code (VS Code), the editor inside your Codespace, is the IDE this course uses.*
 Used in: [Module 2 — The IDE](./modules/02-toolchain/01-ide.md).
 
+### intent
+The "intent" step of the agent loop — knowing what you are trying to build before you start asking. *Example: "I want today's date below the tagline" is intent; "make the page nicer" is not.*
+Used in: [Module 3 — Introducing the loop](./modules/03-the-loop/01-introducing-the-loop.md).
+
 ## L
 
 ### localhost
@@ -171,6 +189,10 @@ Used in: [Module 2 — The package manager (npm)](./modules/02-toolchain/04-pack
 ### package-manager
 A tool that downloads and tracks the code your project depends on. *Example: npm is the package manager this course uses; pnpm is an alternative the deferred course platform uses.*
 Used in: [Module 2 — The package manager (npm)](./modules/02-toolchain/04-package-manager-npm.md).
+
+### prompt
+The specific text you send to an AI agent describing what you want. *Example: "Add today's date below the tagline" is a prompt; a series of prompts plus the agent's responses is a session.*
+Used in: [Module 3 — Introducing the loop](./modules/03-the-loop/01-introducing-the-loop.md).
 
 ### pull
 Fetch commits from a remote git host (like GitHub) and merge them into your local copy. *Example: `git pull` at the start of a coding session brings down any commits you (or someone else) pushed from another machine.*
@@ -237,6 +259,10 @@ Used in: [Module 2 — AI coding agents](./modules/02-toolchain/06-ai-coding-age
 ### sql
 Structured Query Language — the standard way to ask a relational database for rows. *Example: `SELECT * FROM posts ORDER BY created_at DESC`.*
 Used in: [Module 1 — Where data lives, how programs talk](./modules/01-mental-models/02-where-data-lives.md).
+
+### steer
+The "steer" step of the agent loop — course-correcting when the agent's output does not match your intent. *Example: "The date appeared above the tagline; please put it below" is a steer.*
+Used in: [Module 3 — Introducing the loop](./modules/03-the-loop/01-introducing-the-loop.md).
 
 ## T
 
