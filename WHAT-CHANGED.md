@@ -36,6 +36,8 @@ Each entry has the format:
 
 **What does NOT change:** The core audience-floor contract (never written production code, computer-comfortable, Module 7 for deeper knowledge). The lesson anatomy. The vocabulary callout pattern. The M3.5 sample-app scaffold. The locked analogies D-40..D-48 — all survive Wave 1 unchanged. M3.5 L2 (the new gold-standard exemplar). Any M0/M1/M2/M3 lesson prose.
 
+**Phase 02.2 Wave 1 close (appended 2026-05-18).** L1, L3, and L4 rewritten under the Agent-Responsibility Boundary. L1: cut App Router / URL-routing / TypeScript / JSX D-04 callouts; reframed Core read body around "this folder is where pages live" (office-directory analogy preserved). L3: cut stack-trace + error-message-anatomy D-04 callouts + four-part anatomy rule + `:line:column` parsing; reframed around "find the first line whose path starts with `./app/`, paste the full error to your agent" (receipt analogy preserved). L4: cut the WHY-the-split explanation + rendering-execution model + JSX callout + React Server Components callout; rewrote server-component / client-component / hydration D-04 callouts as SYMPTOM-only; collapsed "What you just closed" into What-you-just-did breadcrumb (framed-picture-vs-touchscreen analogy preserved). `GLOSSARY.md` `### hydration` entry rewritten to symptom-only definition. Voice-lint check #9 now emits zero WARNs against M3.5 (was 4 against L3 before the rewrite). The L1→L2→L3→L4 prev/next chain is unbroken; the four-analogy narrative arc (office directory → contractor → receipt → gallery) reads coherently. M3.5 L2 untouched.
+
 ---
 
 ## 2026-05-14 — Phase 2 close (Modules 2, 3, 3.5 shipped)
